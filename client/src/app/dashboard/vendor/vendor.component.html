@@ -1,0 +1,82 @@
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingThree">
+    <button
+      class="accordion-button collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseThree"
+      aria-expanded="false"
+      aria-controls="collapseThree"
+    >
+      <span>
+        <i class="bi bi-plus-circle"></i>
+        Add a new vendor
+      </span>
+    </button>
+  </h2>
+  <div
+    id="collapseThree"
+    class="accordion-collapse collapse"
+    aria-labelledby="headingThree"
+    data-bs-parent="#accordionExample"
+  >
+    <div class="accordion-body">
+      <form (ngSubmit)="save()" [formGroup]="vendorForm" novalidate>
+        <ng-container *ngIf="ServerError">
+          <div class="alert alert-danger mb-3">
+            {{ ServerError }}
+          </div>
+        </ng-container>
+        <ng-container *ngIf="SuccessMessage">
+          <div class="alert alert-success mb-3">
+            {{ SuccessMessage }}
+          </div>
+        </ng-container>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            formControlName="slug"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter Vendor"
+          />
+          <label for="floatingInput">Vendor Name</label>
+        </div>
+        <div class="justify-content-around d-flex">
+          <button class="btn btn-info w-25" type="submit">Add Vendor</button>
+          <button class="btn btn-danger w-25" type="reset">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div *ngIf="tableMessage">
+  <div class="alert alert-success my-3">
+    {{tableMessage}}
+  </div>
+</div>
+<!-- Table Data For Vendor -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Slug</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of vendor; let i = index">
+    <td class="fw-bold">
+      {{i + 1}}
+    </td>
+    <td class="text-capitalize">
+      {{item.slug}}
+    </td>
+    <td class="d-flex gap-2">
+      <button class="btn btn-warning w-25" (click)="updateVendor(item._id)">Edit</button>
+      <button class="btn btn-danger w-25" (click)="deleteVendor(item._id)">Delete</button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>

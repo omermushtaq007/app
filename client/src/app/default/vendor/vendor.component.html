@@ -1,0 +1,28 @@
+<section class="container">
+  <nav aria-label="breadcrumb" class="alert alert-secondary">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/" class="fw-bold text-dark">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Vendors</li>
+    </ol>
+  </nav>
+
+  <h1>All Vendors</h1>
+  <div>
+    <button
+      class="
+        btn btn-outline-danger
+        border-2 border-dark
+        rounded-0
+        text-capitalize
+        my-2
+        mx-2
+      "
+      routerLink="/{{item._id}}" 
+      *ngFor="let item of vendor"  
+    >
+      {{ item.slug }}
+    </button>
+  </div>
+</section>

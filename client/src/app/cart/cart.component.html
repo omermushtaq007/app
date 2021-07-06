@@ -1,0 +1,56 @@
+<section class="container">
+  <table class="table border rounded-3">
+    <thead>
+      <tr class="bg-info rounded-3 text-light">
+        <th scope="col">Exam Code</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>
+          <button class="btn btn-outline-danger">
+            <i class="bi bi-x-circle-fill"></i> Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <section class="d-sm-flex gap-3 justify-content-between">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="card bg-secondary py-5 w-auto">
+            <div class="card-body">
+              <h5 class="card-title text-light text-center fs-2">Coupon Code</h5>
+            </div>
+            <div class="card-title text-light fs-6">
+              <div class="mx-2 form-group">
+                  <input type="text" class="form-control" placeholder='Enter "Coupon Code"...'>
+              </div>
+            </div>
+            <button class="btn btn-info rounded-0 mx-2 my-2 text-light">
+              Submit
+            </button>
+          </div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+      <div class="card bg-secondary py-5 w-auto">
+        <div class="card-body">
+          <h5 class="card-title text-light text-center fs-2">Checkout</h5>
+        </div>
+        <div class="card-title text-light fs-4">
+          <div class="mx-2">
+            Grand Total: <span class="fw-bolder">${{ price }}</span>
+          </div>
+        </div>
+        <button class="btn btn-info rounded-0 mx-2 my-2 text-light">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </section>
+</section>

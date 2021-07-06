@@ -1,0 +1,48 @@
+<ng-container *ngIf="user; else notUser">
+  <div class="dropdown">
+    <button
+      class="
+        btn btn-outline-danger
+        text-capitalize
+        fw-bold
+        border-2
+        dropdown-toggle
+      "
+      type="button"
+      id="dropdownMenuButton1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <!-- {{ user.avatar }}; -->
+      <span>
+        <img
+          [src]="user.avatar"
+          alt="profile image"
+          class="w-auto rounded-circle"
+          height="20px"
+        />
+        {{ user.firstName }}
+      </span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <ng-container *ngIf="user.isAdmin">
+        <li>
+          <a class="dropdown-item" routerLink="/dashboard">
+            <i class="bi bi-app-indicator">Dashboard</i>
+          </a>
+        </li>
+      </ng-container>
+
+      <li>
+        <a class="dropdown-item" (click)="logout()" routerLink="/">
+          <span> <i class="bi bi-box-arrow-right"></i> Logout </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</ng-container>
+<ng-template #notUser>
+  <button class="btn btn-outline-danger border-2" routerLink="sign-up">
+    <span class="d-flex"> <i class="bi bi-person-fill"></i> Register </span>
+  </button>
+</ng-template>

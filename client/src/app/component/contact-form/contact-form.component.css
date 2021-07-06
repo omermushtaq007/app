@@ -1,0 +1,36 @@
+.form-control,
+.form-label {
+  color: gray;
+  font-weight: bold;
+}
+
+.title {
+  font-family: 'Sigmar One', cursive;
+  font-weight: bolder;
+}
+
+.des {
+  font-family: 'Sigmar One', cursive;
+  font-weight: bolder;
+}
+
+#nav-link {
+  color: cadetblue;
+  text-decoration: none;
+
+}
+
+#nav-link:hover {
+  color: skyblue;
+  text-decoration: underline;
+
+}
+
+#social {
+  font-size: larger;
+}
+
+#social:hover {
+  font-size: xx-large;
+  animation: ease-in-out;
+}

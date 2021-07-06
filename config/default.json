@@ -1,0 +1,4 @@
+{
+  "realExamHubURI": "mongodb+srv://umermushtaq:0ZygEzNWYCmTq1S1@cluster0.8sfcw.mongodb.net/realexamhub?retryWrites=true&w=majority",
+  "jwtSecret": "qwertyuio23456789g23456789rtghj6"
+}

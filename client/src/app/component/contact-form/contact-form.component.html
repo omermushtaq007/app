@@ -1,0 +1,124 @@
+<div class="container">
+  <hr />
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/" class="fw-bold text-dark">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Contact Form</li>
+    </ol>
+  </nav>
+  <hr />
+  <h1>
+    <span class="display-4">Contact Form </span>
+    <i class="bi bi-chat-right-dots"></i>
+  </h1>
+  <section class="row">
+    <div class="col-lg-8 col-md-8 col-12">
+      <p class="fw-light">
+        <strong class="des">
+          You can contact us any time. Our support team is available 24/7 to
+          serve you. Feel free to contact us.
+        </strong>
+      </p>
+      <form (ngSubmit)="send()" [formGroup]="contactForm" novalidate>
+        <div class="form-floating mb-3 w-auto">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            id="fullName"
+            required
+            placeholder="Enter Your Full Name."
+          />
+          <label for="fullName" class="form-label">Full Name</label>
+        </div>
+        <div class="form-floating mb-3 w-auto">
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            id="email"
+            required
+            placeholder="Enter Your Valid Email."
+          />
+          <label for="email" class="form-label">Email Address</label>
+        </div>
+        <div class="form-floating mb-3 w-auto">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="subject"
+            id="subject"
+            required
+            placeholder="Enter Your Full Name."
+          />
+          <label for="subject" class="form-label">Subject</label>
+        </div>
+        <div class="form-floating mb-3 w-auto">
+          <textarea
+            type="text"
+            class="form-control"
+            rows="5"
+            formControlName="message"
+            id="message"
+            required
+            placeholder='Type Your Message'
+          ></textarea>
+          <label for="message" class="form-label">Message</label>
+        </div>
+        <button
+          [disabled]="!contactForm.valid"
+          class="btn btn-outline-info w-auto mb-5"
+          type="submit"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+    <div class="col-lg-4 col-md-4 col-12">
+      <h2 class="title">Our Contacts</h2>
+      <h4 class="fw-light">
+        <i class="bi bi-building"></i>
+        Address:
+      </h4>
+      <p class="text-muted text-break">
+        35, Lorem Lis Street, Park Ave California, US
+      </p>
+      <h4 class="fw-light">
+        <i class="bi bi-info-circle"></i>
+        About Us:
+      </h4>
+      <p class="text-muted">
+        <a routerLink="/" id="nav-link">Dumps Hub</a> is best place to prepare
+        your exam with 100% reliable study material. We are providing free
+        sample questions here so you can check our study material quality .
+        Don't forget to buy complete exam file.
+      </p>
+      <h4 class="fw-light">
+        <i class="bi bi-envelope"></i>
+        Email:
+      </h4>
+      <p>
+        <a routerLink="mailto:umermushtaq3424@gmail.com" id="nav-link">
+          support@dumpsexam.com
+        </a>
+      </p>
+      <h4 class="fw-light">
+        <i class="bi bi-cloudy"></i>
+        Social:
+      </h4>
+      <p class="d-flex gap-2">
+        <a href="http://" class="text-muted">
+          <i class="bi bi-facebook" id="social"></i>
+        </a>
+        <a href="http://" class="text-muted">
+          <i class="bi bi-instagram" id="social"></i>
+        </a>
+        <a href="http://" class="text-muted">
+          <i class="bi bi-google" id="social"></i>
+        </a>
+      </p>
+    </div>
+  </section>
+</div>

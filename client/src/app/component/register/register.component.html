@@ -1,0 +1,61 @@
+<div class="container mb-3">
+  <h1 class="text-center fs-1 mb-3">
+    <i class="bi bi-emoji-heart-eyes"></i>
+    Register Account
+  </h1>
+  <form (ngSubmit)="register()" [formGroup]="registerForm" novalidate>
+    <div *ngIf="errorForm" class="alert alert-danger">
+      {{ errorForm }}
+    </div>
+    <div class="form-floating mb-3 w-auto">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="firstName"
+        id="firstName"
+        placeholder="Enter Your Last Name."
+      />
+      <label for="firstName">First Name</label>
+    </div>
+    <div class="form-floating mb-3 w-auto">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="lastName"
+        id="lastName"
+        placeholder="Enter Your Last Name."
+      />
+      <label for="lastName">Last Name</label>
+    </div>
+    <div class="form-floating mb-3 w-auto">
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        id="email"
+        placeholder="name@example.com"
+      />
+      <label for="email">Email address</label>
+    </div>
+    <div class="form-floating mb-3 w-auto">
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+    <a routerLink="../login" class="nav-link text-capitalize">
+      I have already an account. Login with Email.
+      <i class="bi bi-arrow-right"></i>
+    </a>
+    <button
+      type="submit"
+      class="btn btn-info py-2 text-dark fw-bolder fs-4 w-100"
+    >
+      Sign Up <i class="bi bi-box-arrow-in-right"></i>
+    </button>
+  </form>
+</div>

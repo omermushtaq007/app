@@ -1,0 +1,39 @@
+<nav class="border-bottom fs-5 fw-bold">
+  <section class="container py-3">
+    <ul class="nav row gap-2 py-2">
+      <li class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-12">
+        <img src="assets/images/logo.png" class="w-100" alt="">
+      </li>
+      <li class="col-xl-7 col-lg-7 col-md-5 col-sm-4 col-12">
+        <form>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control border-2"
+              placeholder='type "Exam Code"...'
+            />
+            <button class="btn btn-danger fw-bolder border-2">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </li>
+      <li class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-12">
+        <div
+          class="
+            d-flex
+            mx-auto
+            gap-2
+            justify-content-lg-end justify-content-md-end
+          "
+        >
+          <app-user-button></app-user-button>
+
+          <button class="btn btn-outline-danger border-2" routerLink="cart">
+            <span class="d-flex"><i class="bi bi-cart-fill"></i> Cart</span>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</nav>

@@ -1,0 +1,23 @@
+/* h1 {
+  font-family: 'Sigmar One', cursive;
+  font-weight: bolder;
+
+} */
+
+.form-control {
+  color: gray;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  overflow: hidden;
+}
+
+.nav-link:active {
+  text-decoration: underline;
+}
+
+

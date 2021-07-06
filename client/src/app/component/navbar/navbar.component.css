@@ -1,0 +1,8 @@
+.nav-link {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: black
+}

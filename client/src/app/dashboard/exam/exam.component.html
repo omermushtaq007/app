@@ -1,0 +1,188 @@
+<div class="alert alert-danger mb-3" *ngIf="errorMessage">
+  {{errorMessage}}
+</div>
+<div class="alert alert-success mb-3" *ngIf="successMessage">
+  {{successMessage}}
+</div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingThree">
+    <button
+      class="accordion-button collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseThree"
+      aria-expanded="false"
+      aria-controls="collapseThree"
+    >
+      <span>
+        <i class="bi bi-plus-circle"></i>
+        Add a new Exam.
+      </span>
+    </button>
+  </h2>
+  <div
+    id="collapseThree"
+    class="accordion-collapse collapse"
+    aria-labelledby="headingThree"
+    data-bs-parent="#accordionExample"
+  >
+    <div class="accordion-body">
+      <form (ngSubmit)="onSave()" [formGroup]="examForm" novalidate>
+        <!-- 1st Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <select
+            class="form-select"
+            formControlName="slug"
+            id="floatingSelect"
+            aria-label="Floating label select example"
+          >
+            <option selected>Select Menu</option>
+            <option value="{{item.slug}}" *ngFor="let item of vendor">{{item.slug}}</option>
+          </select>
+          <label for="floatingSelect">Select Vendor</label>
+        </div>
+
+        <!-- 2nd Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            formControlName="examCode"
+            placeholder="Enter certification name."
+          />
+          <label for="floatingInput">Exam Code</label>
+        </div>
+        <!-- 3rd Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="examName"
+            id="floatingInput"
+            placeholder="Enter certification name."
+          />
+          <label for="floatingInput">Exam Name</label>
+        </div>
+        <!-- 4th Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <select
+            class="form-select"
+            id="floatingSelect"
+            formControlName="certificateName"
+            aria-label="Floating label select example"
+          >
+            <option selected>Select Menu</option>
+            <option value="{{item.certificateName}}" *ngFor="let item of certificates">{{item.certificateName}}</option>
+          </select>
+          <label for="floatingSelect">Select Certification</label>
+        </div>
+        <!-- 5th Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="floatingInput"
+            formControlName="question"
+            placeholder="Enter certification name."
+          />
+          <label for="floatingInput">Number of Questions</label>
+        </div>
+        <!-- 6th Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <input
+            type="date"
+            class="form-control text-uppercase"
+            id="floatingInput"
+            formControlName="update"
+            placeholder="Enter Date"
+          />
+          <label for="floatingInput">Update Dates</label>
+        </div>
+        <!-- 7th Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            class="form-control text-uppercase"
+            id="floatingInput"
+            formControlName="price"
+            placeholder="Enter Date"
+          />
+          <label for="floatingInput">Prices</label>
+        </div>
+        <!-- 8th Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <select
+            class="form-select"
+            id="floatingSelect"
+            formControlName="status"
+            aria-label="Floating label select example"
+          >
+            <option selected>Select Menu</option>
+            <option value="true">Enable</option>
+            <option value="false">Disable</option>
+          </select>
+          <label for="floatingSelect">Select Status</label>
+        </div>
+        <!-- 9th Input Field for Exams -->
+        <div class="form-floating mb-3">
+          <select
+            class="form-select"
+            id="floatingSelect"
+            formControlName="isRetired"
+            aria-label="Floating label select example"
+          >
+            <option selected>Select Menu</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+          <label for="floatingSelect">Retired</label>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-info w-50" type="submit">Add Exam</button>
+          <button class="btn btn-danger w-50" type="reset">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- table -->
+
+<table class="table w-100">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Slug</th>
+      <th scope="col">Certification</th>
+      <th scope="col">Exam Name</th>
+      <th scope="col">Exam Code</th>
+      <th scope="col">No of Questions</th>
+      <th scope="col">Price</th>
+      <th scope="col">Status</th>
+      <th scope="col">Retired</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of exams; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ item.slug }}</td>
+      <td>{{ item.certificateName }}</td>
+      <td>{{ item.examName }}</td>
+      <td>{{ item.examCode }}</td>
+      <td>{{ item.question }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.status }}</td>
+      <td>{{ item.isRetired}}</td>
+      <td class="d-flex justify-content-between gap-2">
+        <button class="btn btn-warning w-50" (click)="onUpdate(item._id)">Edit</button>
+        <button class="btn btn-danger w-50" (click)="onDelete(item._id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
